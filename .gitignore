@@ -1,0 +1,21 @@
+# Dados — arquivos grandes, não sobem pro repositório
+data/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+.venv/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Streamlit
+.streamlit/
+
+# OS
+.DS_Store
+Thumbs.db
