@@ -3,6 +3,8 @@
 Sistema de recomendação de jogos construído com duas abordagens de Machine Learning: filtragem baseada em conteúdo (TF-IDF + cosine similarity) e filtragem colaborativa (user-item matrix). Os modelos são avaliados com métricas padrão de sistemas de recomendação (precision@k, recall@k) e expostos via interface interativa com Streamlit.
 
 ---
+![Demo do sistema de recomendação](assets/demo.gif)
+---
 
 ## Motivação
 
@@ -193,21 +195,42 @@ game-recommender/
 
 ## Como rodar
 
-```bash
-# Instalar dependências
-pip install -r requirements.txt
+### Pré-requisitos
 
-# Testar content-based
+Baixe os dois arquivos do dataset no [Kaggle — Steam Store Games](https://www.kaggle.com/datasets/nikdavis/steam-store-games) 
+e coloque dentro da pasta `data/`:
+
+- `steam.csv`
+- `steam_description_data.csv`
+
+Sem esses arquivos nenhum dos módulos roda.
+
+### Instalação
+
+```bash
+pip install -r requirements.txt
+```
+
+### Demo interativa (recomendado)
+
+```bash
+python -m streamlit run app/streamlit_app.py
+```
+
+### Testar modelos individualmente
+
+```bash
+# Content-Based Filtering
 python src/content_based.py
 
-# Testar collaborative filtering
+# Collaborative Filtering
 python src/collaborative.py
+```
 
-# Abrir notebook de análise
+### Notebook de análise
+
+```bash
 jupyter notebook notebooks/analysis.ipynb
-
-# Rodar a demo
-python -m streamlit run app/streamlit_app.py
 ```
 
 ---
